@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz di Disegno Tecnico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Importa il file CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Importa il file JavaScript -->
+<script src="quiz-data.js"></script>
+<script src="script.js" defer></script>
+
+    
+</head>
+<body>
+    <div class="quiz-container">
+        <svg class="floating-tool tool-1" viewBox="0 0 24 24">
+            <path d="M12,2L1,21H23M12,6L19.5,19H4.5M11,10V14H13V10M11,16V18H13V16" fill="none" stroke="#2c3e50" stroke-width="2"/>
+        </svg>
+        
+        <svg class="floating-tool tool-2" viewBox="0 0 24 24">
+            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" fill="none" stroke="#2c3e50" stroke-width="2"/>
+            <path d="M12,8L8,12L12,16M16,12L12,16" fill="none" stroke="#2c3e50" stroke-width="2"/>
+        </svg>
+        
+        <div class="header">
+            <h1><i class="fas fa-drafting-compass"></i> Quiz di Disegno Tecnico</h1>
+            <p>Testa le tue conoscenze sul disegno tecnico con 30 domande a risposta multipla</p>
+        </div>
+        
+        <div class="scoring-info">
+            <p><i class="fas fa-check-circle"></i> Risposta corretta: <strong>+1 punto</strong> &nbsp;&nbsp; 
+            <i class="fas fa-forward"></i> Non rispondi: <strong>0 punti</strong> &nbsp;&nbsp; 
+            <i class="fas fa-times-circle"></i> Risposta errata: <strong>-0.25 punti</strong></p>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        
+        <div id="quiz-content">
+            <!-- Le domande verranno inserite qui dinamicamente -->
+        </div>
+        
+        <div class="navigation">
+            <button class="btn btn-prev" id="prev-btn" disabled><i class="fas fa-arrow-left"></i> Precedente</button>
+            <button class="btn" id="next-btn">Prossima <i class="fas fa-arrow-right"></i></button>
+        </div>
+        
+        <div class="results-container" id="results-container">
+            <h2>Risultati del Quiz</h2>
+            <div class="score" id="score">0.00</div>
+            <div class="score-text" id="score-text"></div>
+            
+            <div class="stats-container">
+                <div class="stat-box correct">
+                    <div class="stat-value correct" id="correct-count">0</div>
+                    <div class="stat-label">Corrette</div>
+                </div>
+                <div class="stat-box incorrect">
+                    <div class="stat-value incorrect" id="incorrect-count">0</div>
+                    <div class="stat-label">Errate</div>
+                </div>
+                <div class="stat-box skipped">
+                    <div class="stat-value skipped" id="skipped-count">0</div>
+                    <div class="stat-label">Saltate</div>
+                </div>
+            </div>
+            
+            <div class="feedback-section">
+                <div class="center-button">
+                    <button class="btn btn-restart" id="restart-btn"><i class="fas fa-redo"></i> Riprova il Quiz</button>
+                </div>
+                <h3>Dettaglio Risposte</h3>
+                <div id="feedback-details" class="options-grid">
+                    <!-- Feedback dettagliato per ogni domanda -->
+                </div>
+            </div>
+            <div class="center-button">
+                <button class="btn btn-restart" id="restart-btn"><i class="fas fa-redo"></i> Riprova il Quiz</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
