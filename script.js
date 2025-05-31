@@ -26,7 +26,6 @@ const correctCountElement = document.getElementById('correct-count');
 const incorrectCountElement = document.getElementById('incorrect-count');
 const skippedCountElement = document.getElementById('skipped-count');
 const feedbackDetails = document.getElementById('feedback-details');
-const restartBtn = document.getElementById('restart-btn');
 
 // Funzione per mostrare la domanda corrente
 function showQuestion() {
@@ -217,20 +216,23 @@ prevBtn.addEventListener('click', () => {
     }
 });
 
-restartBtn.addEventListener('click', () => {
-    currentQuestion = 0;
-    userAnswers = new Array(selectedQuestions.length).fill(null);
-    score = 0;
-    correctCount = 0;
-    incorrectCount = 0;
-    skippedCount = 0;
+document.querySelectorAll('.btn-restart').forEach(restartBtn => {
+    restartBtn.addEventListener('click', () => {
+        currentQuestion = 0;
+        userAnswers = new Array(selectedQuestions.length).fill(null);
+        score = 0;
+        correctCount = 0;
+        incorrectCount = 0;
+        skippedCount = 0;
 
-    document.querySelector('.navigation').style.display = 'flex';
-    quizContent.style.display = 'block';
-    resultsContainer.style.display = 'none';
+        document.querySelector('.navigation').style.display = 'flex';
+        quizContent.style.display = 'block';
+        resultsContainer.style.display = 'none';
 
-    showQuestion();
+        showQuestion();
+    });
 });
+
 
 // Inizia il quiz
 showQuestion();
